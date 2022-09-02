@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2022 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <template id="portal_frontend_layout" inherit_id="portal.frontend_layout">
+        <xpath expr="//footer" position="inside">
+            <div class="float-right mb16" t-ignore="true" t-if="not editable">
+                Integrated by <a
+                    target="_blank"
+                    href="https://www.escodoo.com.br"
+                >Escodoo</a>
+            </div>
+        </xpath>
+  </template>
+
+</odoo>
