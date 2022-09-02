@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "author": "Escodoo",
     "website": "https://github.com/Escodoo/base-addons",
-    "depends": ["web", "disable_odoo_online"],
-    "data": ["views/web_login_layout.xml"],
+    "depends": ["portal", "disable_odoo_online"],
+    "data": ["views/portal_frontend_layout.xml", "views/web_login_layout.xml"],
     "installable": True,
 }
