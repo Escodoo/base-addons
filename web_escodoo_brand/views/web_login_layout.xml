@@ -9,7 +9,7 @@
         inherit_id="web.login_layout"
     >
     <xpath expr="//div[hasclass('pt-3')]" position="inside">
-      <a href="https://www.escodoo.com.br" target="_blank">Integred by <span
+        <br></br><a href="https://www.escodoo.com.br" target="_blank">Integrated by <span
                 >Escodoo</span></a>
     </xpath>
   </template>
