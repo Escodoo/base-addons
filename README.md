@@ -1,12 +1,13 @@
-<!-- [![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat//15.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-base-addons-) -->
-<!-- [![Build Status](https://travis-ci.com/Escodoo/base-addons.svg?branch=15.0)](https://travis-ci.com/Escodoo/base-addons) -->
-[![tests](https://github.com/Escodoo/base-addons/actions/workflows/test.yml/badge.svg)](https://github.com/Escodoo/base-addons/actions/workflows/test.yml)
+
+<!-- /!\ Non OCA Context : Set here the badge of your runbot / runboat instance. -->
+[![Pre-commit Status](https://github.com/Escodoo/base-addons/actions/workflows/pre-commit.yml/badge.svg?branch=15.0)](https://github.com/Escodoo/base-addons/actions/workflows/pre-commit.yml?query=branch%3A15.0)
+[![Build Status](https://github.com/Escodoo/base-addons/actions/workflows/test.yml/badge.svg?branch=15.0)](https://github.com/Escodoo/base-addons/actions/workflows/test.yml?query=branch%3A15.0)
 [![codecov](https://codecov.io/gh/Escodoo/base-addons/branch/15.0/graph/badge.svg)](https://codecov.io/gh/Escodoo/base-addons)
-<!-- [![Translation Status](https://translation.odoo-community.org/widgets/base-addons-15-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/base-addons-15-0/?utm_source=widget) -->
+<!-- /!\ Non OCA Context : Set here the badge of your translation instance. -->
 
 <!-- /!\ do not modify above this line -->
 
-# Escodoo Odoo Base Addons
+# Escodoo Base Addons
 
 Escodoo add-ons used to extend or customize Odoo Base app functions.
 
@@ -14,7 +15,8 @@ Escodoo add-ons used to extend or customize Odoo Base app functions.
 
 <!-- prettier-ignore-start -->
 
-
+[//]: # (addons)
+[//]: # (end addons)
 
 <!-- prettier-ignore-end -->
 
@@ -27,8 +29,4 @@ policy. Consult each module's `__manifest__.py` file, which contains a `license`
 that explains its license.
 
 ----
-
-We at Escodoo are exclusively dedicated to deploying the Odoo Platform and are
-focused on providing solutions that make our customers more competitive, lowering
-costs, making technology more accessible and ensuring it is used strategically to
-add even more value to the business.
+<!-- /!\ Non OCA Context : Set here the full description of your organization. -->
