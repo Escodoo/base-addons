@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='UTF-8' ?>
+<odoo noupdate="1">
+
+    <record model="ir.cron" id="res_partner_update_sqi_cron">
+        <field name="name">Update Supplier Quality Index </field>
+        <field name="model_id" ref="model_res_partner" />
+        <field name="state">code</field>
+        <field name="code">model.update_sqi()</field>
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field eval="False" name="doall" />
+    </record>
+
+</odoo>

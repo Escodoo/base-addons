@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="res_partner_sqi_profile_form_view">
+        <field name="name">res.partner.sqi.profile.form (in escodoo_iqf)</field>
+        <field name="model">res.partner.sqi.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="code" placeholder="code" />
+                    </group>
+                </sheet>
+                <div class="oe_chatter" />
+            </form>
+        </field>
+    </record>
+
+    <!-- <record model="ir.ui.view" id="res_partner_sqi_profile_search_view">
+        <field name="name">res.partner.sqi.profile.search (in escodoo_iqf)</field>
+        <field name="model">res.partner.sqi.profile</field>
+        <field name="arch" type="xml">
+            <search>
+
+            </search>
+        </field>
+    </record> -->
+
+    <!-- <record model="ir.ui.view" id="res_partner_sqi_profile_tree_view">
+        <field name="name">res.partner.sqi.profile.tree (in escodoo_iqf)</field>
+        <field name="model">res.partner.sqi.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record> -->
+
+    <record model="ir.actions.act_window" id="res_partner_sqi_profile_act_window">
+        <field name="name">Supplier Quality Index Profile</field>
+        <field name="res_model">res.partner.sqi.profile</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="res_partner_sqi_menu">
+        <field name="name">SQI</field>
+        <field name="parent_id" ref="base.menu_administration" />
+        <field name="sequence" eval="99" />
+    </record>
+
+    <record model="ir.ui.menu" id="res_partner_sqi_profile_menu">
+        <field name="name">SQI Profile</field>
+        <field name="parent_id" ref="res_partner_sqi_menu" />
+        <field name="action" ref="res_partner_sqi_profile_act_window" />
+        <field name="sequence" eval="1" />
+    </record>
+
+</odoo>

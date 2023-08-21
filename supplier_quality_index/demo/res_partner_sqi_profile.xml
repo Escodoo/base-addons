@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+
+    <record model="res.partner.sqi.profile" id="res_partner_sqi_profile_demo_1">
+       <field name="name">Fixed Score</field>
+       <field name="code">result = 10</field>
+    </record>
+
+</odoo>
