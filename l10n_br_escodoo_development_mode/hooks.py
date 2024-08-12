@@ -15,14 +15,21 @@ from odoo.addons.l10n_br_fiscal.constants.fiscal import (
 _logger = logging.getLogger(__name__)
 
 
+def _switch_environment(env, companies, fiscal_documents, field_name, value, doc_type):
+    companies.write({field_name: value})
+    _logger.info(f"{doc_type} environment switched to homologation for all companies.")
+    fiscal_documents.write({field_name: value})
+    _logger.info(
+        f"{doc_type} environment switched to homologation for fiscal documents."
+    )
+
+
 def post_init_hook(cr, registry):
-    """Switch NFe environment to homologation for all companies and related fiscal
+    """Switch NFe/NFSe environment to homologation for all companies and related fiscal
     documents in development mode."""
 
     env = api.Environment(cr, SUPERUSER_ID, {})
     companies = env["res.company"].search([])
-    companies.write({"nfe_environment": "2"})
-    _logger.info("NFe environment switched to homologation for all companies.")
 
     document_states = (
         SITUACAO_EDOC_EM_DIGITACAO,
@@ -30,12 +37,21 @@ def post_init_hook(cr, registry):
         SITUACAO_EDOC_ENVIADA,
         SITUACAO_EDOC_REJEITADA,
     )
-    l10n_br_nfe_module = env["ir.module.module"].search(
-        [("name", "=", "l10n_br_nfe"), ("state", "=", "installed")]
-    )
-    if l10n_br_nfe_module:
-        fiscal_documents = env["l10n_br_fiscal.document"].search(
-            [("company_id", "in", companies.ids), ("state", "in", document_states)]
+
+    modules_to_check = {
+        "l10n_br_nfe": {"field": "nfe_environment", "doc_type": "NFe"},
+        "l10n_br_nfse": {"field": "nfse_environment", "doc_type": "NFSe"},
+    }
+
+    for module_name, data in modules_to_check.items():
+        module_installed = env["ir.module.module"].search(
+            [("name", "=", module_name), ("state", "=", "installed")]
         )
-        fiscal_documents.write({"nfe_environment": "2"})
-        _logger.info("NFe environment switched to homologation for fiscal documents.")
+
+        if module_installed:
+            fiscal_documents = env["l10n_br_fiscal.document"].search(
+                [("company_id", "in", companies.ids), ("state", "in", document_states)]
+            )
+            _switch_environment(
+                env, companies, fiscal_documents, data["field"], "2", data["doc_type"]
+            )
