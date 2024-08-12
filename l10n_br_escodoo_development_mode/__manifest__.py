@@ -12,7 +12,6 @@
     "website": "https://github.com/Escodoo/base-addons",
     "depends": [
         "escodoo_development_mode",
-        "l10n_br_nfe",
     ],
     "auto_install": True,
     "post_init_hook": "post_init_hook",
