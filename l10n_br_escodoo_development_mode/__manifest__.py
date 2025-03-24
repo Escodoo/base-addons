@@ -6,13 +6,11 @@
     "summary": """
         This module changes some data and parameters of the copied database that will
         be used in development or approval environments.""",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "license": "AGPL-3",
     "author": "Escodoo",
     "website": "https://github.com/Escodoo/base-addons",
-    "depends": [
-        "escodoo_development_mode",
-    ],
+    "depends": ["escodoo_development_mode", "l10n_br_fiscal"],
     "auto_install": True,
     "post_init_hook": "post_init_hook",
 }
