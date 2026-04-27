@@ -14,7 +14,7 @@ class ResPartner(models.Model):
         if self.env.context.get("_partners_skip_fields_sync"):
             return partners
 
-        for partner, vals in zip(partners, vals_list):
+        for partner, vals in zip(partners, vals_list, strict=False):
             partner._fields_sync(vals)
             if not partner.parent_id and partner.company_name:
                 partner.create_company()
