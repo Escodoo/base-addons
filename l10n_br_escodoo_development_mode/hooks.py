@@ -3,8 +3,6 @@
 
 import logging
 
-from odoo import SUPERUSER_ID, api
-
 from odoo.addons.l10n_br_fiscal.constants.fiscal import (
     SITUACAO_EDOC_A_ENVIAR,
     SITUACAO_EDOC_EM_DIGITACAO,
@@ -24,11 +22,10 @@ def _switch_environment(env, companies, fiscal_documents, field_name, value, doc
     )
 
 
-def post_init_hook(cr, registry):
+def post_init_hook(env):
     """Switch NFe/NFSe environment to homologation for all companies and related fiscal
     documents in development mode."""
 
-    env = api.Environment(cr, SUPERUSER_ID, {})
     companies = env["res.company"].search([])
 
     document_states = (
