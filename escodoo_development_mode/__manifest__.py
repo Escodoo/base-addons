@@ -14,6 +14,6 @@
         "mail",
         "web_environment_ribbon",
     ],
-    "auto_install": True,
+    "auto_install": False,
     "post_init_hook": "post_init_hook",
 }
